@@ -5,5 +5,14 @@
 # Home page
 GET     /                           controllers.Application.index
 
+
+# Contacts
+#POST    /contacts                   controllers.Application.addContact
+#GET     /formContacts               controllers.Application.formRepeat
+
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+# WebJars
+GET         /webjars/*file          controllers.WebJarAssets.at(file)

@@ -10,3 +10,20 @@ target
 # Play stuff
 activator*
 
+conf/secrets*
+conf/heroku.conf
+tmp
+
+.history
+dist
+/*.iml
+/out
+
+*-shim.sbt
+.DS_Store
+*/.DS_Store
+npm_modules
+node-v4.1.0-windows-x86
+bower_components
+public/images
+notes.txt

@@ -1,15 +1,51 @@
-@(title: String)(content: Html)
+@(title: String, stylesheets: Html = Html(""), scripts: Html = Html(""))(content: Html)(implicit messages: Messages, request: play.api.mvc.RequestHeader)
+
 
 <!DOCTYPE html>
 
 <html lang="en">
+<html prefix="og: http://ogp.me/ns#">
     <head>
-        <title>@title</title>
+        <title>@title | @Messages("global.companyname")</title>
+        <!-- Le Responsiveness -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Le Style -->
+        <link rel="stylesheet" media="screen" href="@routes.WebJarAssets.at(WebJarAssets.locate("bootstrap.min.css"))">
         <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
-        <script src="@routes.Assets.versioned("javascripts/hello.js")" type="text/javascript"></script>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/ionicons.css")">
+
+        @stylesheets
+
+        <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+        </script>
+        <![endif]-->
+
     </head>
     <body>
         @content
+
+        <!-- Le footer -->
+        <footer class="footer">
+            <div class="container foot">
+
+                <small>
+                    <p> &copy; @Messages("global.companyname"), 2015 </p>
+                </small>
+            </div>
+
+        </footer>
     </body>
+    <!-- Le Scripting - Bootstrap + JQuery  + App core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="@routes.WebJarAssets.at(WebJarAssets.locate("jquery.min.js"))"></script>
+    <script src="@routes.WebJarAssets.at(WebJarAssets.locate("bootstrap.min.js"))"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="@routes.Assets.versioned("javascripts/ie10Hack.js")" type="text/javascript"></script>
+    <!-- App specifics -->
+    <script src="@routes.Assets.versioned("javascripts/main.js")" type="text/javascript"></script>
+    @scripts
 </html>

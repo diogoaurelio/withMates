@@ -1,7 +1,16 @@
-@(message: String)
+@(contactForm: Form[ContactData])(implicit messages: Messages, request: play.api.mvc.RequestHeader)
 
-@main("Welcome to Play") {
+@import helper._
 
-    @play20.welcome(message)
+@stylesheets = {
+<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/index.css")">
+}
+@scripts = {
+<script src="@routes.Assets.versioned("javascripts/index.js")" type="text/javascript"></script>
+}
+
+@main("Welcome to ", stylesheets, scripts) {
+
+    test
 
 }
