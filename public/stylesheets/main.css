@@ -6,3 +6,7 @@ body {
 .footer {
     color: grey;
 }
+
+.footer > .foot {
+    margin: 20px 40px 20px;
+}
