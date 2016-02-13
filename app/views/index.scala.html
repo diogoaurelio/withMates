@@ -11,6 +11,28 @@
 
 @main("Welcome to ", stylesheets, scripts) {
 
-    test
+    <!-- Entrance fiesta -->
+
+    <div id="wm-pic-entrance" class="wm-region bg-image-wm position-relative" data-type="background" data-speed="10">
+        <div class="overlay">
+            <div class="colWhite">
+                <div class="vertical-center text-center paddOverlay1">
+                    <h1 class="paddText20"><b>@Messages("global.welcometo") <i>@Messages("global.companyname")</i></b></h1>
+                    <h3 class="paddText20">@Messages("landpage.mktgSentence_1_on_wm_pic")</h3>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="region greyRegionDark" id="we_code">
+      <div class="container">
+        <div class="row text-center">
+          <a data-toggle="modal" data-target="#contactUsModal" class="btn btn-default btn-tuned font-18">@Messages("global.contact_us")</a>
+        </div>
+      </div>
+    </div>
+
 
 }

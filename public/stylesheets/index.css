@@ -1,0 +1,61 @@
+/* index.css */
+
+/* Background imgs:
+*/
+
+/* TOP img */
+.bg-image-wm {
+  background: url('https://s3-eu-west-1.amazonaws.com/withmatesdev/withmates.jpg') scroll center no-repeat;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+}
+
+.overlay {
+  background: rgba(0,0,0,.5);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  //min-height: 100%;
+  top: 0 px;
+  left: 0 px;
+  bottom: 0 px;
+  right: 0 px;
+}
+
+/* hack the f* carousel */
+.carousel-caption{
+    position:static;
+}
+.carouselIndicatorsHack {
+    position: relative;
+    margin-top: 2em;
+}
+
+
+.position-relative {
+  position: relative;
+}
+
+.paddOverlay1 {
+  padding-top: 150px;
+  padding-bottom: 80px;
+}
+
+.paddOverlay2 {
+  padding-top: 15px;
+  padding-bottom: 20px;
+  margin-right: 20%;
+  margin-left: 20%;
+}
+
+
+.wm-region {
+    height:600px;
+}
+
+.limitWidth {
+  width: 80%;
+  margin-left: 15px;
+}

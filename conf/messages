@@ -5,6 +5,8 @@ global.contact_us = Contact us
 global.services = Services
 global.submit = Submit
 
+landpage.mktgSentence_1_on_wm_pic = We sell your kidney, and make loads of money.. Sounds good, right? Register now!
+
 form.leave_contact = Leave us a message and we will get to you ASAP
 form.contact_name = Name
 form.contact_entername = Enter your name
