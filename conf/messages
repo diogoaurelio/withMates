@@ -1,12 +1,15 @@
-global.companyname = withMates
+global.companyname = withmates
 global.welcometo = Welcome to
 global.about_us = About us
 global.contact_us = Contact us
 global.services = Services
 global.submit = Submit
+global.be_notified_when_we_launch = Be notified when we launch
 
 landpage.contact_us_form = Be notified when we launch
-landpage.mktgSentence_1_on_wm_pic = We sell your kidney, and make loads of money.. Sounds good, right? Register now!
+landpage.mktgSentence_1_on_wm_pic = We are a group of wild scientists reinventing curated drinking, making it personalized for you and your friends.
+landpage.mktgSentence_2_on_wm_pic = Stay tuned, we are launching soon..
+
 
 form.leave_contact = Enter your email
 form.contact_name = Name

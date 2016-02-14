@@ -15,6 +15,7 @@ libraryDependencies ++= Seq(
   "org.webjars" % "jquery" % "2.1.4",
   "org.webjars" % "bootstrap" % "3.3.5",
   "com.typesafe.play" %% "play-mailer" % "3.0.1"
+  //"org.postgresql" % "postgresql" % "9.4-1201-jdbc41"
 )
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
