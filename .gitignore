@@ -25,5 +25,8 @@ dist
 npm_modules
 node-v4.1.0-windows-x86
 bower_components
+!public/images/favicon.ico
+
 public/images
+
 notes.txt
