@@ -17,6 +17,6 @@ form.contact_entername = Enter your name (optional)
 form.contact_email = Email
 form.contact_enteremail = Enter your email address
 form.see_you_soon = Cool, we have got it!
-form.thank_you_success = We ca not wait to share with you all the "recipes" we are cooking.. We will keep in touch!
+form.thank_you_success = We can not wait to share with you all the "recipes" we are cooking.. We will keep in touch!
 form.email_error = There was an error submitting your contact! We would really appreciate if you could give another try!
 form.error_repeat = Seems like the email you provided is not correct. Can you please doublecheck?
