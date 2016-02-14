@@ -1,11 +1,10 @@
 /* index.css */
 
-/* Background imgs:
-*/
 
 /* TOP img */
-.bg-image-wm {
-  background: url('https://s3-eu-west-1.amazonaws.com/withmatesdev/withmatesLandingPage.jpg') scroll center no-repeat;
+
+.bg-image-bsd {
+  background: url('https://s3-eu-west-1.amazonaws.com/9-labs/bench.jpg') scroll center no-repeat;
   -webkit-background-size: cover;
      -moz-background-size: cover;
        -o-background-size: cover;
@@ -33,7 +32,6 @@
     margin-top: 2em;
 }
 
-
 .position-relative {
   position: relative;
 }
@@ -51,24 +49,11 @@
 }
 
 
-.wm-region {
+.bsd-region {
     height:600px;
 }
 
 .limitWidth {
   width: 80%;
   margin-left: 15px;
-}
-
-.blackColor {
-    color: black;
-}
-
-dd ~ .error {
-    color: red;
-}
-
-.squeeze20 {
-   margin-right: 15px !important;
-   margin-left: 15px !important;
 }

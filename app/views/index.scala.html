@@ -24,6 +24,16 @@
 
             </div>
 
+            @request.flash.get("error").map { msg =>
+                <div class="row close-image">
+                    <div class="col-md-6 col-md-offset-3 alert alert-danger alert-error">
+                        <a href="#" class="close" data-dismiss="alert">&times;</a>
+                        <strong>Whoops..</strong> @msg
+                    </div>
+                </div>
+
+            }
+
             <div class="region greyRegionDark" id="contact_us">
               <div class="container">
                 <div class="row text-center">
@@ -34,5 +44,37 @@
         </div>
     </div>
 
+
+    <!-- Modal -->
+    <div class="modal fade" id="contactUsModal" tabindex="-1" role="dialog" aria-labelledby="contactUsModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title blackColor" id="contactUsModalLabel">@Messages("landpage.contact_us_form") </h4>
+          </div>
+          <div class="modal-body">
+
+                  @helper.form(action = routes.Application.addContact(), 'role -> "form-inline", 'class -> "form-horizontal" ) {
+                    <div class="form-group squeeze20">
+                    @inputText(
+                      contactForm("email"), '_label -> Messages("form.contact_email"), 'class -> "col-sm-2 control-label",
+                      'placeholder -> Messages("form.contact_enteremail"), 'class -> "form-control col-sm-10", '_showErrors -> true,
+                      '_showConstraints -> true
+                    )
+                    </div>
+
+                    </div>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <input type="submit" value='@Messages("global.submit")' class="btn btn-success" />
+                  </div>
+                  }
+
+
+        </div>
+      </div>
+    </div>
 
 }

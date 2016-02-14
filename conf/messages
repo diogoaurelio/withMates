@@ -5,13 +5,15 @@ global.contact_us = Contact us
 global.services = Services
 global.submit = Submit
 
+landpage.contact_us_form = Be notified when we launch
 landpage.mktgSentence_1_on_wm_pic = We sell your kidney, and make loads of money.. Sounds good, right? Register now!
 
-form.leave_contact = Leave us a message and we will get to you ASAP
+form.leave_contact = Enter your email
 form.contact_name = Name
-form.contact_entername = Enter your name
+form.contact_entername = Enter your name (optional)
 form.contact_email = Email
 form.contact_enteremail = Enter your email address
-form.contact_caseintro = Case introduction
-form.contact_entercaseintro = Short description of your company's use case
-form.thank_you_success = Thank you, we have successfully received your message, and will contact you ASAP.
+form.see_you_soon = Cool, we have got it!
+form.thank_you_success = We ca not wait to share with you all the "recipes" we are cooking.. We will keep in touch!
+form.email_error = There was an error submitting your contact! We would really appreciate if you could give another try!
+form.error_repeat = Seems like the email you provided is not correct. Can you please doublecheck?

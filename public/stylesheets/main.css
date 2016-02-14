@@ -1,6 +1,12 @@
 
+
+html {
+    font-family: "Open Sans";
+}
+
 body {
     color: #ffffff;
+    font-family: "Open Sans";
 }
 
 .footer {
