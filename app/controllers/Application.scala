@@ -40,13 +40,15 @@ class Application @Inject() (val messagesApi: MessagesApi, mailerClient: MailerC
 
   // http://stackoverflow.com/questions/30208339/play-framework-2-3-x-unable-to-send-emails-using-plugin-play-mailer
   def sendEmail(intro: String, clientEmail: String): Boolean = {
-    val from =  current.configuration.getString("play.mailer.from")
-    val recepients = current.configuration.getString("play.mailer.recipients")
-    val to = current.configuration.getString("play.mailer.to")
+    val to = current.configuration.getString("play.mailer.recipients")
+    val from = current.configuration.getString("play.mailer.from")
+    val subject: String = "Good news " + Messages("global.companyname") + " Boss"
+    println(to)
+    println(from)
     val email = Email(
-      "Good news " + Messages("global.companyname") + " Boss",
-      to.getOrElse("default value"),
-      Seq(from.getOrElse("default value")),
+      subject,
+      from.getOrElse("default value"),
+      Seq(to.getOrElse("default value")),
       bodyText = Some(intro + " We have a new potential client: " + clientEmail),
       bodyHtml = Some("<html><body><p><b>" + intro + " </b></p>" +
         "<p> We have a new client! </p>" +
