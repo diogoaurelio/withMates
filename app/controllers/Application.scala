@@ -7,7 +7,9 @@ import play.api.i18n.{Messages, I18nSupport, MessagesApi}
 import play.api.mvc._
 import javax.inject._
 import play.api.libs.mailer._
-
+import extras.MailChimp
+import play.api.libs.json.{JsValue, Json}
+import play.twirl.api.HtmlFormat
 
 class Application @Inject() (val messagesApi: MessagesApi, mailerClient: MailerClient) extends Controller with I18nSupport {
 
@@ -30,21 +32,30 @@ class Application @Inject() (val messagesApi: MessagesApi, mailerClient: MailerC
     contactForm.bindFromRequest().fold(
       formWithErrors => BadRequest(views.html.formRepeat(formWithErrors)),
       ContactData => {
+        // TODO: refactor for co-routines/async
         sendEmail("Awesome news boss,", ContactData.email) match {
-          case true => Ok(views.html.messageSuccess(ContactData))
+          case true => subscribeMailchimp(ContactData.email) //Ok(views.html.messageSuccess(ContactData))
           case _ => Redirect(routes.Application.index()).flashing("error" -> Messages("form.email_error"))
         }
+
       }
     )
   }
+  private def subscribeMailchimp(email:String) = {
 
-  // http://stackoverflow.com/questions/30208339/play-framework-2-3-x-unable-to-send-emails-using-plugin-play-mailer
-  def sendEmail(intro: String, clientEmail: String): Boolean = {
+    def errorAsJson(errors: JsValue) = Json.obj("errors" -> errors)
+    def escape(s: String) = HtmlFormat.escape(s).toString()
+
+    MailChimp.subscribe(email) match {
+      case Right(msg) => Ok(Json.obj("success" -> escape(msg)))
+      case Left(msg) => InternalServerError(errorAsJson(Json.obj("email" -> Json.arr(escape(msg)))))
+    }
+  }
+
+  private def sendEmail(intro: String, clientEmail: String): Boolean = {
     val to = current.configuration.getString("play.mailer.recipients")
     val from = current.configuration.getString("play.mailer.from")
     val subject: String = "Good news " + Messages("global.companyname") + " Boss"
-    println(to)
-    println(from)
     val email = Email(
       subject,
       from.getOrElse("default value"),

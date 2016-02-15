@@ -6,6 +6,10 @@ global.services = Services
 global.submit = Submit
 global.be_notified_when_we_launch = Be notified when we launch
 
+mailchimp.subscribed = Alright! We have added you to our list, and will contact you soon!
+mailchimp.failed = Oops! Something wrong happened. Try again later.
+
+
 landpage.contact_us_form = Be notified when we launch
 landpage.mktgSentence_1_on_wm_pic = We are a group of mad scientists reinventing curated drinking, making it personalized for you and your friends.
 landpage.mktgSentence_2_on_wm_pic = Stay tuned, we are launching soon...
